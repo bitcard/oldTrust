@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/root" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/layout_app_bar" />
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout android:id="@+id/push_preference" android:background="@color/white" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/title_height_normal" android:paddingStart="@dimen/big_padding">
+            <TextView android:textSize="@dimen/normal_text" android:textColor="@color/item_title" android:id="@+id/push_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings.allowPushNotifications.button.title" android:layout_centerVertical="true" />
+            <androidx.appcompat.widget.SwitchCompat android:id="@+id/push_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginEnd="@dimen/normal_margin" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <LinearLayout android:orientation="vertical" android:id="@+id/send_receive_container" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:id="@+id/send_receive_preference" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="@dimen/title_height_normal" android:paddingStart="@dimen/big_padding">
+                <TextView android:textSize="@dimen/normal_text" android:textColor="@color/secondary_text" android:id="@+id/send_receive_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings.pushNotifications.payment.button.title" android:layout_centerVertical="true" />
+                <androidx.appcompat.widget.SwitchCompat android:enabled="false" android:id="@+id/send_receive_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:checked="true" android:layout_centerVertical="true" android:layout_marginEnd="@dimen/normal_margin" android:layout_alignParentEnd="true" />
+            </RelativeLayout>
+            <include layout="@layout/list_separator_full" />
+            <RelativeLayout android:background="@color/browser_actions_bg_grey" android:layout_width="fill_parent" android:layout_height="@dimen/title_height_small" android:paddingStart="@dimen/big_padding">
+                <TextView android:textSize="@dimen/small_text" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginBottom="@dimen/normal_margin" android:text="@string/settings.pushNotifications.allowPushNotifications.footer" android:layout_centerVertical="true" android:layout_alignParentStart="true" />
+            </RelativeLayout>
+            <include layout="@layout/list_separator_full" />
+        </LinearLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

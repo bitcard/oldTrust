@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="24.0sp" android:textColor="#ff2b2d32" android:id="@+id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin" android:layout_marginBottom="@dimen/normal_margin" android:layout_alignBaseline="@id/action_open" android:fontFamily="@font/roboto_regular" android:layout_marginStart="@dimen/big_margin" android:layout_marginEnd="@dimen/big_margin" />
+    <TextView android:textSize="18.0sp" android:textColor="@color/colorAccent" android:id="@+id/action_open" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin" android:layout_marginBottom="@dimen/normal_margin" android:text="@string/SeeAll" android:textAllCaps="false" android:layout_marginStart="@dimen/big_margin" android:layout_marginEnd="@dimen/big_margin" android:layout_alignParentEnd="true" />
+    <androidx.recyclerview.widget.RecyclerView android:id="@+id/sublist" android:layout_width="fill_parent" android:layout_height="96.0dip" android:layout_below="@id/action_open" />
+</RelativeLayout>

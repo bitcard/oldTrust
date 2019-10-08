@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="horizontal" android:background="@color/white" android:paddingTop="@dimen/normal_margin" android:paddingBottom="@dimen/normal_margin" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/big_margin" android:paddingEnd="@dimen/big_margin"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <FrameLayout android:id="@+id/icon_container" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <de.hdodenhof.circleimageview.CircleImageView android:id="@+id/icon" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_margin="@dimen/small_margin" app:civ_border_color="@color/token_circle_grey" app:civ_border_width="0.5dip" />
+        <ImageView android:layout_gravity="end|center|top" android:id="@+id/select_badge" android:visibility="gone" android:layout_width="16.0dip" android:layout_height="16.0dip" app:srcCompat="@drawable/select_badge" />
+    </FrameLayout>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toStartOf="@id/actions" android:layout_toEndOf="@id/icon_container">
+        <TextView android:textAppearance="@style/TextAppearance.AppCompat.Headline" android:textSize="@dimen/normal_text" android:ellipsize="end" android:id="@+id/name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:lines="1" android:singleLine="true" android:layout_marginStart="@dimen/normal_margin" />
+        <TextView android:textAppearance="@style/TextAppearance.AppCompat.Headline" android:textSize="@dimen/small_text" android:ellipsize="middle" android:id="@+id/address" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/small_margin" android:singleLine="true" android:layout_marginStart="@dimen/normal_margin" android:layout_marginEnd="@dimen/normal_margin" />
+        <TextView android:textAppearance="@style/TextAppearance.AppCompat.Headline" android:textSize="@dimen/small_text" android:ellipsize="middle" android:id="@+id/balance_eth" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/small_margin" android:singleLine="true" android:layout_marginStart="@dimen/normal_margin" android:layout_marginEnd="@dimen/normal_margin" />
+    </LinearLayout>
+    <LinearLayout android:id="@+id/actions" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true">
+        <ImageView android:id="@+id/watch_icon" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin" android:layout_marginBottom="@dimen/normal_margin" android:contentDescription="@string/EmptyString" android:layout_marginStart="@dimen/normal_margin" app:srcCompat="@drawable/ic_remove_red_eye_black_24dp" />
+        <ImageView android:id="@+id/wallet_info_action" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/normal_margin" android:contentDescription="@string/EmptyString" app:srcCompat="@drawable/ic_more_vert_black_24dp" />
+    </LinearLayout>
+</RelativeLayout>

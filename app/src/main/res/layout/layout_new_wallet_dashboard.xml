@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:layout_gravity="center_vertical" android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/big_margin">
+        <ImageView android:layout_gravity="center_horizontal" android:layout_width="150.0dip" android:layout_height="150.0dip" android:src="@drawable/happy_mascot" />
+        <TextView android:textSize="@dimen/title_text" android:gravity="center_horizontal" android:id="@+id/wallet_action_title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin" android:layout_marginBottom="@dimen/big_margin" android:text="@string/walletCreated" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/item_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Name" android:fontFamily="@font/roboto_regular" />
+        <TextView android:textSize="13.0sp" android:textColor="@color/item_text" android:id="@+id/name" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/small_margin" android:layout_marginBottom="@dimen/big_margin" android:textIsSelectable="true" android:fontFamily="@font/roboto_regular" />
+        <TextView android:textSize="18.0sp" android:textColor="@color/item_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/MyWalletAddress" android:fontFamily="@font/roboto_regular" />
+        <TextView android:textSize="13.0sp" android:textColor="@color/item_text" android:id="@+id/address" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/small_margin" android:layout_marginBottom="@dimen/big_margin" android:textIsSelectable="true" android:fontFamily="@font/roboto_regular" />
+    </LinearLayout>
+    <Button android:layout_gravity="bottom" android:id="@+id/action_done" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/big_margin" android:text="@string/Done" style="@style/Widget.AppCompat.Button.Colored" />
+</FrameLayout>

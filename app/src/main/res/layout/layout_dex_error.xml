@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ImageView android:layout_gravity="center_horizontal" android:layout_width="120.0dip" android:layout_height="120.0dip" android:src="@drawable/trusty_sad" />
+    <TextView android:textColor="@color/colorAccent" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@+id/message" android:padding="@dimen/big_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin" />
+    <Button android:textColor="@color/colorAccent" android:layout_gravity="center_horizontal" android:id="@+id/action_try_again" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin" android:text="@string/TryAgain" style="@style/Base.Widget.AppCompat.Button.Borderless" />
+</LinearLayout>

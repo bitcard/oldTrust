@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.budiyev.android.codescanner.CodeScannerView android:id="@+id/scanner_view" android:layout_width="fill_parent" android:layout_height="fill_parent" app:autoFocusButtonColor="@android:color/white" app:autoFocusButtonVisible="true" app:flashButtonColor="@android:color/white" app:flashButtonVisible="true" app:frameAspectRatioHeight="1.0" app:frameAspectRatioWidth="1.0" app:frameColor="@android:color/white" app:frameCornersSize="50.0dip" app:frameSize="0.75" app:frameThickness="2.0dip" app:maskColor="#77000000" />
+    <ImageView android:layout_gravity="end|bottom|center" android:id="@+id/open_gallery_scan_action" android:background="@drawable/ic_open_gallery_white" android:layout_width="32.0dip" android:layout_height="32.0dip" android:layout_margin="@dimen/big_margin" android:contentDescription="@string/dapp.dialog.choose.source.select.image" />
+</FrameLayout>

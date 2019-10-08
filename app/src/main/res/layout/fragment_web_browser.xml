@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.wallet.crypto.trustapp.ui.dapp.view.BrowserBottomPanelLayout android:id="@+id/bottom_controls" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true">
+        <include layout="@layout/layout_web_browser_bottom_controls" />
+    </com.wallet.crypto.trustapp.ui.dapp.view.BrowserBottomPanelLayout>
+    <com.wallet.crypto.trustapp.ui.dapp.view.BrowserView android:id="@+id/web_view_container" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/bottom_controls">
+        <me.zhanghai.android.materialprogressbar.MaterialProgressBar android:id="@+id/progress" android:layout_width="fill_parent" android:layout_height="5.0dip" android:max="100" android:progress="75" android:indeterminate="false" android:elevation="1.0dip" app:mpb_progressStyle="horizontal" app:mpb_showProgressBackground="true" app:mpb_useIntrinsicPadding="false" style="@style/Widget.MaterialProgressBar.ProgressBar.Horizontal" />
+        <!--<androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@+id/refresh_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/receive_container" />-->
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout android:id="@+id/refresh_layout" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    </com.wallet.crypto.trustapp.ui.dapp.view.BrowserView>
+    <FrameLayout android:id="@+id/fragment_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</RelativeLayout>

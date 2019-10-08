@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <com.wallet.crypto.trustapp.widget.PinKeyboardView android:id="@+id/keyboard" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_alignParentBottom="true" />
+    <RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/keyboard">
+        <com.wallet.crypto.trustapp.widget.PinView android:id="@+id/pin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin" android:layout_marginBottom="@dimen/normal_margin" android:layout_centerInParent="true" />
+        <TextView android:textSize="18.0sp" android:id="@+id/title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_above="@id/pin" android:layout_centerHorizontal="true" />
+        <ImageView android:id="@+id/open_fingerprint" android:visibility="gone" android:layout_width="48.0dip" android:layout_height="48.0dip" android:layout_below="@id/pin" android:layout_centerHorizontal="true" app:srcCompat="@drawable/ic_fingerprint_black_24dp" />
+    </RelativeLayout>
+    <FrameLayout android:id="@+id/lock_container" android:background="@color/white" android:padding="@dimen/big_padding" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <ImageView android:layout_gravity="center_horizontal" android:layout_width="92.0dip" android:layout_height="92.0dip" android:src="@drawable/no_transactions_mascot" />
+            <TextView android:textAppearance="@style/TextAppearance.AppCompat.Large" android:textColor="@color/bottom_dialog_title" android:gravity="center" android:layout_gravity="center_horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin" android:layout_marginBottom="@dimen/normal_margin" android:text="@string/passcode.unlockingAfter.message" />
+            <TextView android:textAppearance="@style/TextAppearance.AppCompat.Headline" android:textColor="@color/bottom_dialog_title" android:gravity="center" android:layout_gravity="center_horizontal" android:id="@+id/unlock_timer" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin" android:layout_marginBottom="@dimen/normal_margin" />
+        </LinearLayout>
+    </FrameLayout>
+</RelativeLayout>

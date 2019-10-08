@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_centerVertical="true">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="26.0sp" android:textColor="#ff323747" android:gravity="center_horizontal" android:id="@+id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/half_large_margin" android:text="@string/YourRecoveryPhrase" android:fontFamily="@font/roboto_bolt" android:layout_marginStart="@dimen/half_large_margin" android:layout_marginEnd="@dimen/half_large_margin" />
+            <TextView android:gravity="center_horizontal" android:id="@+id/subtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/YouRecoveryPhraseSubTitle" android:layout_marginStart="@dimen/half_large_margin" android:layout_marginEnd="@dimen/half_large_margin" />
+            <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin" android:layout_marginBottom="@dimen/big_margin" android:layout_marginStart="@dimen/normal_margin" android:layout_marginEnd="@dimen/normal_margin">
+                <com.google.android.flexbox.FlexboxLayout android:id="@+id/phrase" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/big_margin" app:alignContent="stretch" app:alignItems="center" app:flexWrap="wrap" app:justifyContent="center" />
+            </FrameLayout>
+            <LinearLayout android:layout_gravity="center" android:orientation="horizontal" android:layout_width="wrap_content" android:layout_height="wrap_content">
+                <Button android:layout_gravity="center_horizontal" android:id="@+id/action_copy" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Copy" style="@style/Widget.AppCompat.Button.Borderless.Colored" />
+                <Button android:layout_gravity="center_horizontal" android:id="@+id/action_show_as_qr" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/medium_padding" android:text="@string/ShowQR" style="@style/Widget.AppCompat.Button.Borderless.Colored" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/big_margin" android:layout_alignParentBottom="true">
+        <TextView android:gravity="center" android:id="@+id/action_best_way_store" android:background="@drawable/bg_share_warning" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/big_margin" android:text="@string/CopyPhraseAlertMessage" android:drawableTop="@drawable/ic_info_black_24dp" />
+        <Button android:id="@+id/action_verify" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/big_margin" android:text="@string/Continue" style="@style/Widget.AppCompat.Button.Colored" />
+    </LinearLayout>
+</RelativeLayout>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <com.wallet.crypto.trustapp.ui.wallets.view.AddWalletView android:layout_gravity="center_vertical" android:id="@+id/intro" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+    <com.wallet.crypto.trustapp.ui.wallets.view.NewWalletDashboardView android:id="@+id/new_wallet_dashboard" android:background="@color/white" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+    <FrameLayout android:id="@+id/fragment_container" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

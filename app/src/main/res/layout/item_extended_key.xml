@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/gray" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:layout_marginBottom="10.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="@dimen/medium_text" android:id="@+id/coin_name" android:layout_width="fill_parent" android:layout_height="20.0dip" android:layout_marginTop="@dimen/small_margin" android:layout_marginBottom="@dimen/small_margin" android:paddingStart="@dimen/medium_padding" android:paddingEnd="@dimen/medium_padding" />
+    <TextView android:id="@+id/extended_key" android:background="@color/white" android:padding="@dimen/medium_padding" android:layout_width="fill_parent" android:layout_height="80.0dip" />
+</LinearLayout>

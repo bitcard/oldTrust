@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:background="#09000000" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <androidx.cardview.widget.CardView android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content" app:cardBackgroundColor="@color/white" app:cardCornerRadius="0.0dip" app:cardElevation="2.0dip">
+            <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/big_padding" android:paddingBottom="@dimen/big_padding" android:focusable="true" android:focusableInTouchMode="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.google.android.material.textfield.TextInputLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin" android:layout_marginBottom="@dimen/normal_margin" android:layout_marginStart="@dimen/big_margin" android:layout_marginEnd="@dimen/big_margin">
+                    <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:gravity="start" android:id="@+id/gas_price_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/GasPrice" android:inputType="numberDecimal" android:fontFamily="@font/roboto_regular" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin" android:layout_marginBottom="@dimen/normal_margin" android:layout_marginStart="@dimen/big_margin" android:layout_marginEnd="@dimen/big_margin">
+                    <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/gas_limit_text" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/EmptyString" android:hint="@string/GasLimit" android:layout_centerVertical="true" android:inputType="number" android:fontFamily="@font/roboto_regular" android:layout_alignParentEnd="true" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/transaction_data_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin" android:layout_marginBottom="@dimen/normal_margin" android:layout_marginStart="@dimen/big_margin" android:layout_marginEnd="@dimen/big_margin">
+                    <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/transaction_data" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="0x" android:hint="@string/configureTransaction.data.label.title" android:inputType="text" android:importantForAutofill="noExcludeDescendants" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/transaction_nonce_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin" android:layout_marginBottom="@dimen/normal_margin" android:layout_marginStart="@dimen/big_margin" android:layout_marginEnd="@dimen/big_margin">
+                    <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/transaction_nonce" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/Nonce" android:inputType="number" android:importantForAutofill="noExcludeDescendants" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </ScrollView>
+</LinearLayout>

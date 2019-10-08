@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="lock_variants" />
+    <array name="lock_variants">
+        <item>@string/wallets.navigation.title.autolock.immediate</item>
+        <item>@string/wallets.navigation.title.autolock.one.minute</item>
+        <item>@string/wallets.navigation.title.autolock.five.minutes</item>
+        <item>@string/wallets.navigation.title.autolock.one.hour</item>
+        <item>@string/wallets.navigation.title.autolock.five.hour</item>
+    </array>
+</resources>

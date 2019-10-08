@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/white" android:paddingBottom="50.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <Button android:id="@+id/new_account_action" android:padding="@dimen/big_padding" android:layout_width="@dimen/import_button_width" android:layout_height="wrap_content" android:layout_marginTop="50.0dip" android:text="@string/CreateANewWallet" android:layout_above="@id/import_account_action" android:layout_centerHorizontal="true" android:layout_marginStart="@dimen/big_margin" android:layout_marginEnd="@dimen/big_margin" style="@style/Widget.AppCompat.Button.Colored" />
+    <Button android:textColor="@color/colorAccent" android:gravity="center" android:id="@+id/import_account_action" android:background="#00000000" android:padding="@dimen/big_padding" android:layout_width="@dimen/import_button_width" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin" android:text="@string/IAlreadyHaveAWallet" android:layout_alignParentBottom="true" android:layout_centerHorizontal="true" android:textAllCaps="false" android:fontFamily="@font/roboto_bolt" android:layout_marginStart="@dimen/big_margin" android:layout_marginEnd="@dimen/big_margin" />
+    <FrameLayout android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_above="@id/new_account_action">
+        <FrameLayout android:layout_gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <androidx.viewpager.widget.ViewPager android:id="@+id/pager" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+            <com.rd.PageIndicatorView android:layout_gravity="bottom|center" android:id="@+id/pageIndicatorView" android:layout_width="wrap_content" android:layout_height="wrap_content" app:piv_dynamicCount="true" app:piv_interactiveAnimation="true" app:piv_padding="12.0dip" app:piv_radius="4.0dip" app:piv_selectedColor="@color/colorPrimaryDark" app:piv_unselectedColor="#ffdadada" app:piv_viewPager="@id/pager" />
+        </FrameLayout>
+    </FrameLayout>
+</RelativeLayout>

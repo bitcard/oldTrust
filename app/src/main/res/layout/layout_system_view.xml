@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:layout_gravity="center" android:id="@+id/progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <LinearLayout android:layout_gravity="center" android:orientation="vertical" android:id="@+id/error_box" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content">
+        <TextView android:layout_gravity="center_horizontal" android:id="@+id/message" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textColor="@color/colorAccent" android:layout_gravity="center_horizontal" android:id="@+id/try_again" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin" android:text="@string/errorView.description.label.title" android:textAllCaps="true" />
+    </LinearLayout>
+    <FrameLayout android:id="@+id/empty_box" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

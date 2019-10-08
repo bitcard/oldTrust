@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@+id/root" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/layout_simple_toolbar" />
+    <LinearLayout android:orientation="vertical" android:padding="16.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="?actionBarSize">
+        <RelativeLayout android:id="@+id/send_to_address_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin">
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/to_input_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/send_to_address" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/send.recipientAddress.textField.placeholder" android:maxLines="1" android:inputType="text" android:paddingEnd="@dimen/extra_large_size_medium" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button android:textColor="@color/colorAccent" android:id="@+id/action_paste" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="0.0dip" android:text="@string/send.paste.button.title" android:layout_centerVertical="true" android:layout_marginEnd="0.0dip" android:layout_toStartOf="@id/scan_qr_action" style="@style/Widget.AppCompat.Button.Borderless.Colored" />
+            <ImageButton android:id="@+id/scan_qr_action" android:background="?android:selectableItemBackground" android:padding="@dimen/big_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_wallet_scan" android:tint="@color/colorAccent" android:minWidth="0.0dip" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@+id/send_amount_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin">
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/amount_input_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/send_amount" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/send.amount.textField.placeholder" android:maxLines="1" android:inputType="numberDecimal" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button android:id="@+id/action_amountInFiat" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="0.0dip" android:text="USD" android:layout_alignParentEnd="true" style="@style/Widget.AppCompat.Button.Borderless.Colored" />
+            <Button android:id="@+id/max_action" android:padding="10.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="0.0dip" android:text="@string/send.max.button.title" android:layout_toStartOf="@id/action_amountInFiat" style="@style/Widget.AppCompat.Button.Borderless.Colored" />
+        </RelativeLayout>
+        <TextView android:id="@+id/input" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:id="@+id/converted_value" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <TextView android:textSize="14.0sp" android:textColor="#ffc7c7cc" android:id="@+id/meta_optional_title" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin" android:text="@string/Optional" android:textAllCaps="true" android:layout_marginStart="@dimen/small_margin" />
+        <RelativeLayout android:id="@+id/meta_container" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin">
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/meta_input_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/meta_input" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:inputType="text" android:paddingStart="@dimen/half_small_margin" android:paddingEnd="@dimen/large_margin" />
+            </com.google.android.material.textfield.TextInputLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</FrameLayout>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:padding="24.0dip" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView android:textSize="16.0sp" android:gravity="center_horizontal" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/enterPassword.navigation.title" android:fontFamily="@font/roboto_regular" />
+    <com.google.android.material.textfield.TextInputLayout android:id="@+id/password_til" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin" app:errorEnabled="true" app:hintEnabled="false">
+        <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/password" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/enterPassword.password.textField.placeholder" android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+    <com.google.android.material.textfield.TextInputLayout android:id="@+id/confirm_password_til" android:layout_width="fill_parent" android:layout_height="wrap_content" app:errorEnabled="true" app:hintEnabled="false">
+        <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/confirm_password" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/enterPassword.confirmPassword.textField.placeholder" android:inputType="textPassword" />
+    </com.google.android.material.textfield.TextInputLayout>
+</LinearLayout>

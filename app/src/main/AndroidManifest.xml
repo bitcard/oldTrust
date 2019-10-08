@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.wallet.crypto.trustapp">
+
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
+    <uses-permission android:name="android.permission.USE_FINGERPRINT"/>
+    <uses-permission android:name="android.permission.VIBRATE"/>
+    <uses-permission android:name="android.permission.CAMERA"/>
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"/>
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE"/>
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE"/>
+
+    <application
+        android:allowBackup="false"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:hardwareAccelerated="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:name="com.wallet.crypto.trustapp.App"
+        android:testOnly="false"
+        android:theme="@style/AppTheme.NoActionBar">
+        <activity android:name="com.wallet.crypto.trustapp.ui.splash.activity.SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:label="@string/Wallets" android:name="com.wallet.crypto.trustapp.ui.wallets.activity.WalletsActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.wallet.crypto.trustapp.ui.wallets.activity.AddWalletActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:name="com.wallet.crypto.trustapp.ui.wallets.activity.WalletInfoActivity"/>
+        <activity android:label="@string/ExportAccountPublicKeys" android:name="com.wallet.crypto.trustapp.ui.wallets.activity.ExportExtendedKeyActivity"/>
+        <activity android:label="@string/QRCode" android:name="com.wallet.crypto.trustapp.ui.wallets.activity.ShowAsQrActivity" android:screenOrientation="portrait"/>
+
+        <activity android:configChanges="orientation|screenSize" android:name="com.wallet.crypto.trustapp.ui.market.activity.AssetMarketInfoActivity"/>
+
+        <activity android:configChanges="orientation|screenSize" android:name="com.wallet.crypto.trustapp.ui.start.activity.MainActivity" android:windowSoftInputMode="adjustPan"/>
+        <activity android:name="com.wallet.crypto.trustapp.ui.wallets.activity.ExportPhraseActivity" android:screenOrientation="portrait"/>
+
+        <activity android:label="@string/Network" android:name="com.wallet.crypto.trustapp.ui.ChooseBlockchainActivity"/>
+        <activity android:label="Barcode Scan" android:name="com.wallet.crypto.trustapp.ui.QRScannerActivity"/>
+
+        <activity android:configChanges="orientation|screenSize" android:label="@string/importWallet.import.button.title" android:name="com.wallet.crypto.trustapp.ui.importwallet.activity.ImportWalletActivity" android:windowSoftInputMode="stateAlwaysVisible|adjustResize"/>
+
+        <activity android:configChanges="orientation|screenSize" android:name="com.wallet.crypto.trustapp.ui.assets.activity.BuyCryptoActivity" android:windowSoftInputMode="adjustResize"/>
+        <activity android:label="@string/AddCustomToken" android:name="com.wallet.crypto.trustapp.ui.assets.activity.AddAssetActivity" android:windowSoftInputMode="adjustResize"/>
+
+        <activity android:label="@string/Send" android:name="com.wallet.crypto.trustapp.ui.transfer.activity.SendActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/confirmPayment.confirm.button.title" android:name="com.wallet.crypto.trustapp.ui.transfer.activity.ConfirmationActivity"/>
+        <activity android:configChanges="orientation|screenSize" android:label="@string/transaction.detail.navigation.title" android:name="com.wallet.crypto.trustapp.ui.transfer.activity.TransactionDetailActivity"/>
+
+        <activity android:label="@string/transactions.receive.button.title" android:name="com.wallet.crypto.trustapp.ui.receive.activity.ReceiveActivity" android:screenOrientation="portrait"/>
+
+        <activity android:label="Passcode" android:name="com.wallet.crypto.trustapp.ui.passcode.activity.PasscodeActivity" android:windowSoftInputMode="stateHidden"/>
+
+        <activity android:label="@string/settings.currency.button.title" android:name="com.wallet.crypto.trustapp.ui.currency.CurrencySelectionActivity"/>
+        <activity android:label="@string/settings.about.title" android:name="com.wallet.crypto.trustapp.ui.settings.activity.AboutActivity"/>
+        <activity android:label="@string/settings.browser.title" android:name="com.wallet.crypto.trustapp.ui.settings.activity.BrowserSettingsActivity"/>
+        <activity android:label="@string/settings.browser.searchEngine.title" android:name="com.wallet.crypto.trustapp.ui.settings.activity.ChooseSearchEngineActivity"/>
+
+        <activity android:label="@string/WalletConnect" android:name="com.wallet.crypto.trustapp.ui.walletconnect.activity.QRWalletConnectActivity"/>
+        <activity android:label="@string/WalletConnect" android:name="com.wallet.crypto.trustapp.ui.walletconnect.activity.WalletConnectActivity" android:screenOrientation="portrait"/>
+
+        <provider android:authorities="com.wallet.crypto.trustapp.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">
+            <meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>
+        </provider>
+        <provider android:authorities="com.wallet.crypto.trustapp.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"/>
+        <provider android:authorities="com.wallet.crypto.trustapp.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>
+
+        <!--<provider android:authorities="com.wallet.crypto.elaapp.fileProvider" android:exported="false" android:grantUriPermissions="true" android:name="androidx.core.content.FileProvider">-->
+            <!--<meta-data android:name="android.support.FILE_PROVIDER_PATHS" android:resource="@xml/file_paths"/>-->
+        <!--</provider>-->
+        <!--<provider android:authorities="com.wallet.crypto.elaapp.lifecycle-process" android:exported="false" android:multiprocess="true" android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"/>-->
+        <!--<provider android:authorities="com.wallet.crypto.elaapp.firebaseinitprovider" android:exported="false" android:initOrder="100" android:name="com.google.firebase.provider.FirebaseInitProvider"/>-->
+
+        <meta-data android:name="firebase_analytics_collection_deactivated" android:value="true"/>
+        <meta-data android:name="firebase_crash_collection_enabled" android:value="false"/>
+        <meta-data android:name="io.branch.sdk.BranchKey" android:value="key_live_lfvIpVeI9TFWxPCqwU8rZnogFqhnzs4D"/>
+        <meta-data android:name="com.google.android.gms.version" android:value="@integer/google_play_services_version"/>
+
+        <service android:exported="false" android:name="com.google.firebase.components.ComponentDiscoveryService">
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+            <meta-data android:name="com.google.firebase.components:com.google.firebase.iid.Registrar" android:value="com.google.firebase.components.ComponentRegistrar"/>
+        </service>
+        <receiver android:exported="true" android:name="com.google.firebase.iid.FirebaseInstanceIdReceiver" android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE"/>
+            </intent-filter>
+        </receiver>
+        <activity android:exported="false" android:name="com.google.android.gms.common.api.GoogleApiActivity" android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+        <receiver android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementReceiver"/>
+        <receiver android:enabled="true" android:exported="true" android:name="com.google.android.gms.measurement.AppMeasurementInstallReferrerReceiver" android:permission="android.permission.INSTALL_PACKAGES">
+            <intent-filter>
+                <action android:name="com.android.vending.INSTALL_REFERRER"/>
+            </intent-filter>
+        </receiver>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementService"/>
+        <service android:enabled="true" android:exported="false" android:name="com.google.android.gms.measurement.AppMeasurementJobService" android:permission="android.permission.BIND_JOB_SERVICE"/>
+    </application>
+
+</manifest>

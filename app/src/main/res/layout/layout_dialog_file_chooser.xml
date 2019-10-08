@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:paddingBottom="@dimen/normal_padding" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <TextView android:textSize="16.0sp" android:textColor="@color/bottom_dialog_title" android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="56.0dip" android:text="@string/dapp.dialog.choose.source.title" android:fontFamily="@font/roboto_regular" android:paddingStart="@dimen/big_padding" android:paddingEnd="@dimen/big_padding" />
+    <FrameLayout android:id="@+id/action_camera" android:background="@drawable/bg_ripple_primary_color" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <TextView android:textSize="16.0sp" android:textColor="@color/bottom_dialog_item" android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="48.0dip" android:text="@string/dapp.dialog.choose.source.camera" android:fontFamily="@font/roboto_regular" android:layout_marginStart="32.0dip" android:layout_marginEnd="16.0dip" />
+    </FrameLayout>
+    <FrameLayout android:id="@+id/action_media_lib" android:background="@drawable/bg_ripple_primary_color" android:layout_width="fill_parent" android:layout_height="48.0dip">
+        <TextView android:textSize="16.0sp" android:textColor="@color/bottom_dialog_item" android:gravity="center_vertical" android:layout_width="fill_parent" android:layout_height="48.0dip" android:text="@string/dapp.dialog.choose.source.medialibrary" android:fontFamily="@font/roboto_regular" android:layout_marginStart="32.0dip" android:layout_marginEnd="16.0dip" />
+    </FrameLayout>
+</LinearLayout>

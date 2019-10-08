@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/root" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/layout_app_bar" />
+    <ScrollView android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <LinearLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="wrap_content"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <include layout="@layout/list_separator_full" />
+            <FrameLayout android:id="@+id/rate_us_framelayout" android:background="@color/white" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/title_height_normal">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/title_height_normal" android:paddingStart="@dimen/big_padding">
+                    <TextView android:textSize="@dimen/normal_text" android:textColor="@color/item_title" android:id="@+id/rate_us_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings.rateUsPlayStore.button.title" android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </FrameLayout>
+            <include layout="@layout/list_separator_full" />
+            <FrameLayout android:id="@+id/terms_framelayout" android:background="@color/white" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/title_height_normal">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/title_height_normal" android:paddingStart="@dimen/big_padding">
+                    <TextView android:textSize="@dimen/normal_text" android:textColor="@color/item_title" android:id="@+id/terms_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings.termsOfService.button.title" android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </FrameLayout>
+            <include layout="@layout/list_separator_full" />
+            <FrameLayout android:id="@+id/email_us_framelayout" android:background="@color/white" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/title_height_normal">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="@dimen/title_height_normal" android:paddingStart="@dimen/big_padding">
+                    <TextView android:textSize="@dimen/normal_text" android:textColor="@color/item_title" android:id="@+id/email_us_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings.emailUs.button.title" android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </FrameLayout>
+            <include layout="@layout/list_separator_full" />
+            <FrameLayout android:id="@+id/version_framelayout" android:background="@color/white" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <RelativeLayout android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin" android:layout_marginBottom="@dimen/normal_margin" android:paddingStart="@dimen/big_padding">
+                    <TextView android:textSize="@dimen/normal_text" android:textColor="@color/item_title" android:id="@+id/version_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings.version.label.title" />
+                    <TextView android:textSize="@dimen/small_text" android:textColor="@color/secondary_text" android:ellipsize="end" android:id="@+id/version_subtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" android:width="@dimen/extra_large_margin" android:layout_below="@id/version_title" />
+                </RelativeLayout>
+            </FrameLayout>
+            <include layout="@layout/list_separator_full" />
+        </LinearLayout>
+    </ScrollView>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

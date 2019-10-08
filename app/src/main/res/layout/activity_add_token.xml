@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@+id/root" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/layout_simple_toolbar" />
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="?actionBarSize">
+        <LinearLayout android:orientation="vertical" android:paddingTop="@dimen/big_margin" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <RelativeLayout android:orientation="horizontal" android:id="@+id/network" android:background="@drawable/bg_ripple_pin_key" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                <View android:background="@color/gray_background" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+                <View android:background="@color/gray_background" android:layout_width="fill_parent" android:layout_height="0.5dip" android:layout_alignParentBottom="true" />
+                <TextView android:textColor="@color/item_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin" android:layout_marginBottom="@dimen/big_margin" android:text="@string/Network" android:layout_centerVertical="true" android:layout_marginStart="20.0dip" />
+                <ImageView android:id="@+id/network_chevron" android:layout_width="wrap_content" android:layout_height="wrap_content" android:tint="@color/item_text" android:layout_centerVertical="true" android:layout_marginEnd="20.0dip" android:layout_alignParentEnd="true" app:srcCompat="@drawable/ic_chevron_right_grey_24dp" />
+                <TextView android:textColor="@color/item_text" android:id="@+id/network_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_toStartOf="@id/network_chevron" />
+            </RelativeLayout>
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginLeft="@dimen/big_padding" android:layout_marginRight="@dimen/big_padding" android:layout_marginBottom="@dimen/big_padding">
+                <RelativeLayout android:orientation="horizontal" android:id="@+id/address_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin">
+                    <com.google.android.material.textfield.TextInputLayout android:id="@+id/address_input_layout" android:focusable="true" android:layout_width="fill_parent" android:layout_height="wrap_content">
+                        <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/address" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/ContractAddress" android:maxLines="1" android:singleLine="true" android:paddingEnd="@dimen/extra_large_margin" />
+                    </com.google.android.material.textfield.TextInputLayout>
+                    <Button android:textColor="@color/colorAccent" android:id="@+id/action_paste" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="0.0dip" android:text="@string/send.paste.button.title" android:layout_centerVertical="true" android:layout_marginEnd="0.0dip" android:layout_toStartOf="@id/scan_qr_action" style="@style/Widget.AppCompat.Button.Borderless.Colored" />
+                    <ImageButton android:id="@+id/scan_qr_action" android:background="?android:selectableItemBackground" android:padding="@dimen/big_margin" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_wallet_scan" android:tint="@color/colorAccent" android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/name_input_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin">
+                    <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/Name" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/symbol_input_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin">
+                    <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/symbol" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/Symbol" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout android:id="@+id/decimal_input_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin">
+                    <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/decimals" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/Decimals" android:inputType="number" />
+                </com.google.android.material.textfield.TextInputLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+    <com.wallet.crypto.trustapp.widget.SystemView android:id="@+id/system_view" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="?actionBarSize" />
+</FrameLayout>

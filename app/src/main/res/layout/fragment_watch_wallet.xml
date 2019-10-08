@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView android:id="@+id/login_form" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <LinearLayout android:orientation="vertical" android:id="@+id/import_form" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/big_margin">
+        <RelativeLayout android:orientation="horizontal" android:id="@+id/private_key_layout" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.google.android.material.textfield.TextInputLayout android:id="@+id/private_key_input_layout" android:layout_width="fill_parent" android:layout_height="wrap_content" app:hintAnimationEnabled="true" app:hintEnabled="true">
+                <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/watch_address" android:layout_width="fill_parent" android:layout_height="wrap_content" android:maxLines="1" android:singleLine="true" android:inputType="text" android:paddingEnd="@dimen/extra_large_margin" />
+            </com.google.android.material.textfield.TextInputLayout>
+            <Button android:textColor="@color/colorAccent" android:id="@+id/action_paste" android:padding="0.0dip" android:layout_width="wrap_content" android:layout_height="wrap_content" android:minWidth="0.0dip" android:text="@string/send.paste.button.title" android:layout_centerVertical="true" android:layout_marginEnd="@dimen/normal_margin" android:layout_alignParentEnd="true" style="@style/Widget.AppCompat.Button.Borderless.Colored" />
+        </RelativeLayout>
+        <TextView android:padding="@dimen/small_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/normal_margin" android:text="@string/import.watch.footer" />
+        <com.google.android.material.textfield.TextInputLayout android:id="@+id/name_input_layout" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:id="@+id/name" android:layout_width="fill_parent" android:layout_height="wrap_content" android:hint="@string/Name" android:maxLines="1" android:singleLine="true" android:inputType="textCapSentences" />
+        </com.google.android.material.textfield.TextInputLayout>
+        <Button android:id="@+id/action_import" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin" android:layout_marginBottom="@dimen/big_margin" android:text="@string/importWallet.import.button.title" style="@style/Widget.AppCompat.Button.Colored" />
+    </LinearLayout>
+</ScrollView>

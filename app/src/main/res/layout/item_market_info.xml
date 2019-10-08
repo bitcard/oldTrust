@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:padding="0.0dip" android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <include layout="@layout/list_separator_full" />
+        <RelativeLayout android:paddingTop="@dimen/normal_padding" android:paddingBottom="@dimen/normal_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/big_padding" android:paddingEnd="@dimen/big_padding">
+            <TextView android:textSize="@dimen/normal_text" android:id="@+id/market_cap" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+            <TextView android:textAppearance="?android:textAppearanceListItem" android:ellipsize="middle" android:id="@+id/market_cap_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toStartOf="@id/market_cap" android:layout_alignParentStart="true" />
+        </RelativeLayout>
+        <include layout="@layout/list_separator_full" />
+        <RelativeLayout android:paddingTop="@dimen/normal_padding" android:paddingBottom="@dimen/normal_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/big_padding" android:paddingEnd="@dimen/big_padding"
+          xmlns:android="http://schemas.android.com/apk/res/android">
+            <TextView android:textSize="@dimen/normal_text" android:id="@+id/volume" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+            <TextView android:textAppearance="?android:textAppearanceListItem" android:ellipsize="middle" android:id="@+id/volume_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toStartOf="@id/volume" android:layout_alignParentStart="true" />
+        </RelativeLayout>
+        <include layout="@layout/list_separator_full" />
+        <RelativeLayout android:paddingTop="@dimen/normal_padding" android:paddingBottom="@dimen/normal_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/big_padding" android:paddingEnd="@dimen/big_padding">
+            <TextView android:textAppearance="?android:textAppearanceListItem" android:ellipsize="middle" android:id="@+id/circulating_supply_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_toStartOf="@id/circulating_supply" android:layout_alignParentStart="true" />
+            <TextView android:textSize="@dimen/normal_text" android:id="@+id/circulating_supply" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <include layout="@layout/list_separator_full" />
+        <RelativeLayout android:paddingTop="@dimen/normal_padding" android:paddingBottom="@dimen/normal_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:paddingStart="@dimen/big_padding" android:paddingEnd="@dimen/big_padding">
+            <TextView android:textAppearance="?android:textAppearanceListItem" android:ellipsize="middle" android:id="@+id/total_supply_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" android:layout_centerVertical="true" android:layout_toStartOf="@id/total_supply" android:layout_alignParentStart="true" />
+            <TextView android:textSize="@dimen/normal_text" android:id="@+id/total_supply" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <include layout="@layout/list_separator_full" />
+    </LinearLayout>
+</FrameLayout>

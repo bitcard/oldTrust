@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout android:id="@+id/root" android:background="@color/white" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <include layout="@layout/layout_app_bar" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="fill_parent" app:layout_behavior="@string/appbar_scrolling_view_behavior"
+      xmlns:android="http://schemas.android.com/apk/res/android">
+        <RelativeLayout android:id="@+id/enable_dapp_preference" android:background="@color/white" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/title_height_normal" android:paddingStart="@dimen/big_padding">
+            <TextView android:textSize="@dimen/normal_text" android:textColor="@color/item_title" android:id="@+id/enable_dapp_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Enable" android:layout_centerVertical="true" />
+            <androidx.appcompat.widget.SwitchCompat android:id="@+id/enable_dapp_switch" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginEnd="@dimen/normal_margin" android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+        <RelativeLayout android:id="@+id/search_engine_preference" android:background="@color/white" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/title_height_normal">
+            <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerVertical="true" android:paddingStart="@dimen/big_padding">
+                <TextView android:textSize="@dimen/normal_text" android:textColor="@color/item_title" android:id="@+id/search_engine_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings.browser.searchEngine.title" />
+                <TextView android:textSize="@dimen/small_text" android:textColor="@color/item_text" android:ellipsize="end" android:id="@+id/search_engine_subtitle" android:layout_width="wrap_content" android:layout_height="wrap_content" android:maxLines="1" />
+            </LinearLayout>
+        </RelativeLayout>
+        <RelativeLayout android:id="@+id/clear_browser_cache_preference" android:background="@color/white" android:focusable="true" android:clickable="true" android:layout_width="fill_parent" android:layout_height="@dimen/title_height_normal" android:paddingStart="@dimen/big_padding">
+            <TextView android:textSize="@dimen/normal_text" android:textColor="@color/item_title" android:id="@+id/clear_browser_cache_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/settings.browser.clearCache.title" android:layout_centerVertical="true" />
+        </RelativeLayout>
+    </LinearLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

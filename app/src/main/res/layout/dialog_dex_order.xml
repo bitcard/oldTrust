@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout android:orientation="vertical" android:background="@color/white" android:padding="@dimen/big_padding" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <ProgressBar android:layout_gravity="center_horizontal" android:id="@+id/progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+    <ImageView android:layout_gravity="center_horizontal" android:id="@+id/mascot" android:visibility="gone" android:layout_width="150.0dip" android:layout_height="150.0dip" android:layout_margin="@dimen/big_margin" />
+    <TextView android:textSize="20.0sp" android:gravity="center_horizontal" android:id="@+id/message" android:layout_width="fill_parent" android:layout_height="wrap_content" android:text="@string/Loading" android:fontFamily="@font/roboto_regular" />
+    <Button android:layout_gravity="center_horizontal" android:id="@+id/action_ok" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/big_margin" android:text="@string/OK" style="@style/Widget.AppCompat.Button.Colored" />
+</LinearLayout>

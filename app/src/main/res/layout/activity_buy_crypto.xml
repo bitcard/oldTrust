@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/layout_simple_toolbar" />
+    <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_centerInParent="true">
+        <com.wallet.crypto.trustapp.widget.EditTextNoAutofill android:textSize="40.0sp" android:textColor="@color/colorAccent" android:gravity="center_horizontal" android:layout_gravity="center_horizontal" android:id="@+id/amount" android:background="#00000000" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_margin="@dimen/big_margin" android:hint="@string/EnterAmount" android:inputType="numberDecimal" android:fontFamily="@font/roboto_regular" />
+        <FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="22.0sp" android:textColor="#ff7f7f7f" android:gravity="center_horizontal" android:id="@+id/fiat_amount" android:layout_width="fill_parent" android:layout_height="wrap_content" android:fontFamily="@font/roboto_regular" />
+            <ProgressBar android:layout_gravity="center" android:id="@+id/quote_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:progressBarStyleSmall" />
+        </FrameLayout>
+    </LinearLayout>
+    <FrameLayout android:id="@+id/action_buy" android:padding="@dimen/big_margin" android:layout_width="fill_parent" android:layout_height="64.0dip" android:layout_margin="@dimen/half_large_margin" android:layout_alignParentBottom="true" style="@style/Widget.AppCompat.Button.Colored">
+        <TextView android:textSize="18.0sp" android:textColor="#ffffffff" android:layout_gravity="center" android:id="@+id/action_buy_label" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Continue" android:fontFamily="@font/roboto_regular" />
+        <ProgressBar android:layout_gravity="center" android:id="@+id/url_progress" android:visibility="gone" android:layout_width="wrap_content" android:layout_height="wrap_content" style="?android:progressBarStyleSmall" />
+    </FrameLayout>
+</RelativeLayout>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout android:orientation="vertical" android:background="@color/white" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
+    <ScrollView android:layout_width="fill_parent" android:layout_height="fill_parent">
+        <LinearLayout android:orientation="vertical" android:layout_width="fill_parent" android:layout_height="wrap_content">
+            <TextView android:textSize="26.0sp" android:textColor="#ff323747" android:gravity="center_horizontal" android:id="@+id/title" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/half_large_margin" android:text="@string/VerifyRecoveryPhrase" android:fontFamily="@font/roboto_bolt" android:layout_marginStart="@dimen/half_large_margin" android:layout_marginEnd="@dimen/half_large_margin" />
+            <TextView android:gravity="center_horizontal" android:id="@+id/subtitle" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="10.0dip" android:text="@string/verifyPassphrase.label.title" android:layout_marginStart="@dimen/half_large_margin" android:layout_marginEnd="@dimen/half_large_margin" />
+            <FrameLayout android:background="@color/gray_background" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin" android:layout_marginBottom="@dimen/big_margin" android:minHeight="70.0dip">
+                <com.google.android.flexbox.FlexboxLayout android:id="@+id/phrase" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_marginTop="@dimen/big_margin" android:layout_marginBottom="50.0dip" android:layout_marginStart="@dimen/big_margin" android:layout_marginEnd="@dimen/big_margin" app:alignContent="stretch" app:alignItems="stretch" app:flexWrap="wrap" app:justifyContent="center" />
+                <TextView android:textSize="14.0dip" android:gravity="center_horizontal" android:layout_gravity="bottom" android:id="@+id/message" android:visibility="gone" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/big_margin" />
+            </FrameLayout>
+            <com.google.android.flexbox.FlexboxLayout android:id="@+id/words" android:background="@color/white" android:padding="@dimen/normal_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/big_margin" app:alignContent="stretch" app:alignItems="stretch" app:flexWrap="wrap" app:justifyContent="center" />
+        </LinearLayout>
+    </ScrollView>
+    <Button android:enabled="false" android:id="@+id/action_done" android:layout_width="fill_parent" android:layout_height="wrap_content" android:layout_margin="@dimen/big_margin" android:text="@string/Done" android:layout_alignParentBottom="true" style="@style/Widget.AppCompat.Button.Colored" />
+</RelativeLayout>

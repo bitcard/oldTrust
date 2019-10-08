@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:layout_width="fill_parent" android:layout_height="wrap_content"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <RelativeLayout android:id="@+id/currency_view" android:layout_width="fill_parent" android:layout_height="@dimen/title_height_normal" android:paddingStart="@dimen/big_padding">
+        <TextView android:textAppearance="?textAppearanceListItem" android:id="@+id/title" android:background="@color/white" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" />
+        <RadioButton android:id="@+id/button" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerVertical="true" android:layout_marginEnd="@dimen/big_margin" android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+</FrameLayout>

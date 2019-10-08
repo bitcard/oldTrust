@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:id="@+id/root" android:layout_width="fill_parent" android:layout_height="fill_parent"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <include layout="@layout/layout_app_bar" />
+    <LinearLayout android:orientation="vertical" android:background="@color/white" android:fitsSystemWindows="true" android:layout_width="fill_parent" android:layout_height="fill_parent" android:layout_marginTop="?actionBarSize">
+        <TextView android:textSize="@dimen/big_title_text" android:textColor="@color/item_title" android:layout_gravity="center_horizontal" android:id="@+id/market_chart_price" android:padding="@dimen/normal_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:singleLine="true" />
+        <TextView android:textSize="@dimen/list_title_text" android:layout_gravity="center_horizontal" android:id="@+id/market_chart_percentage" android:layout_width="wrap_content" android:layout_height="wrap_content" />
+        <RelativeLayout android:layout_width="wrap_content" android:layout_height="wrap_content">
+            <com.github.mikephil.charting.charts.LineChart android:id="@+id/asset_chart_view" android:layout_width="fill_parent" android:layout_height="180.0dip" />
+            <ProgressBar android:id="@+id/chart_progress_bar" android:visibility="invisible" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_centerHorizontal="true" android:layout_centerVertical="true" style="?android:progressBarStyleSmall" />
+        </RelativeLayout>
+        <androidx.recyclerview.widget.RecyclerView android:layout_gravity="center_horizontal" android:id="@+id/list_chart_options" android:layout_width="wrap_content" android:layout_height="50.0dip" />
+        <androidx.recyclerview.widget.RecyclerView android:id="@+id/list" android:layout_width="fill_parent" android:layout_height="wrap_content" />
+        <View android:layout_width="fill_parent" android:layout_height="30.0dip" />
+        <include layout="@layout/list_separator_full" />
+        <TextView android:textSize="@dimen/normal_text" android:textColor="@color/off_black" android:id="@+id/action_open_BinanceInfo" android:paddingTop="@dimen/normal_padding" android:paddingBottom="@dimen/normal_padding" android:layout_width="fill_parent" android:layout_height="wrap_content" android:drawableEnd="@drawable/ic_chevron_right_grey_24dp" android:paddingStart="@dimen/big_padding" android:paddingEnd="@dimen/big_padding" />
+        <include layout="@layout/list_separator_full" />
+    </LinearLayout>
+    <com.wallet.crypto.trustapp.widget.SystemView android:id="@+id/system_list_view" android:background="@android:color/white" android:layout_width="fill_parent" android:layout_height="fill_parent" />
+</FrameLayout>

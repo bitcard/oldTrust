@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout android:background="@color/white" android:layout_width="fill_parent" android:layout_height="64.0dip"
+  xmlns:android="http://schemas.android.com/apk/res/android">
+    <View android:background="@color/gray_background" android:layout_width="fill_parent" android:layout_height="0.5dip" />
+    <FrameLayout android:layout_width="wrap_content" android:layout_height="fill_parent" android:layoutDirection="ltr">
+        <ImageView android:layout_gravity="start|center" android:id="@+id/action_back" android:padding="@dimen/normal_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_chevron_left_white_24dp" android:tint="@color/colorAccent" android:layout_marginStart="@dimen/big_margin" />
+        <ImageView android:layout_gravity="start|center" android:id="@+id/action_forward" android:padding="@dimen/normal_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_chevron_right_white_24dp" android:tint="@color/colorAccent" android:layout_marginStart="68.0dip" />
+    </FrameLayout>
+    <ImageView android:layout_gravity="center" android:id="@+id/action_home" android:padding="@dimen/normal_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_dapps" android:tint="@color/colorAccent" />
+    <ImageView android:layout_gravity="end|center" android:id="@+id/action_bookmark" android:padding="@dimen/normal_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_bookmark_border_white_24dp" android:tint="@color/colorAccent" android:layout_marginEnd="68.0dip" />
+    <ImageView android:layout_gravity="end|center" android:id="@+id/action_reload" android:padding="@dimen/normal_padding" android:layout_width="wrap_content" android:layout_height="wrap_content" android:src="@drawable/ic_refresh_white_24dp" android:tint="@color/colorAccent" android:layout_marginEnd="16.0dip" />
+</FrameLayout>
