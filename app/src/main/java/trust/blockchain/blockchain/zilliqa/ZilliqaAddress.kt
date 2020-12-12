@@ -17,16 +17,16 @@ class ZilliqaAddress : PlainAddress {
         return str.startsWith("0x", false) || !str.startsWith("zil", true)
     }
 
-    override fun data(): String {
-        var plainAddress = super.toString()
-        Intrinsics.checkExpressionValueIsNotNull(plainAddress, "super.toString()")
-        if (!isLegacyZillAddress(plainAddress)) {
-            return plainAddress
-        }
-        plainAddress = wallet.core.jni.ZilliqaAddress(ExtensionsKt.toHexByteArray(plainAddress)).description()
-        Intrinsics.checkExpressionValueIsNotNull(plainAddress, "JNIZilliqaAddress(addres…yteArray()).description()")
-        return plainAddress
-    }
+//    override fun data(): String {
+//        var plainAddress = super.toString()
+//        Intrinsics.checkExpressionValueIsNotNull(plainAddress, "super.toString()")
+//        if (!isLegacyZillAddress(plainAddress)) {
+//            return plainAddress
+//        }
+//        plainAddress = wallet.core.jni.ZilliqaAddress(ExtensionsKt.toHexByteArray(plainAddress)).description()
+//        Intrinsics.checkExpressionValueIsNotNull(plainAddress, "JNIZilliqaAddress(addres…yteArray()).description()")
+//        return plainAddress
+//    }
 
     override fun display(): String {
         return data()
@@ -44,16 +44,16 @@ class ZilliqaAddress : PlainAddress {
         return data().hashCode()
     }
 
-    fun hexValue(): String {
-        var plainAddress = super.toString()
-        Intrinsics.checkExpressionValueIsNotNull(plainAddress, "super.toString()")
-        if (isLegacyZillAddress(plainAddress)) {
-            return plainAddress
-        }
-        plainAddress = wallet.core.jni.ZilliqaAddress(plainAddress).keyHash()
-        Intrinsics.checkExpressionValueIsNotNull(plainAddress, "JNIZilliqaAddress(address).keyHash()")
-        return plainAddress
-    }
+//    fun hexValue(): String {
+//        var plainAddress = super.toString()
+//        Intrinsics.checkExpressionValueIsNotNull(plainAddress, "super.toString()")
+//        if (isLegacyZillAddress(plainAddress)) {
+//            return plainAddress
+//        }
+//        plainAddress = wallet.core.jni.ZilliqaAddress(plainAddress).keyHash()
+//        Intrinsics.checkExpressionValueIsNotNull(plainAddress, "JNIZilliqaAddress(address).keyHash()")
+//        return plainAddress
+//    }
 
     constructor(parcel: Parcel) : super(parcel){
     }

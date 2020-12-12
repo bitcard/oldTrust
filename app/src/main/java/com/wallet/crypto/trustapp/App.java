@@ -28,7 +28,7 @@ public class App extends Application implements HasActivityInjector {
     @Inject
     /* renamed from: a */
     DispatchingAndroidInjector<Activity> f18843a;
-    @Inject
+//    @Inject
     /* renamed from: b */
     TransactionsRepository f18844b;
     @Inject
@@ -37,7 +37,7 @@ public class App extends Application implements HasActivityInjector {
     @Inject
     /* renamed from: d */
     PasscodeRepositoryType f18846d;
-    @Inject
+//    @Inject
     /* renamed from: e */
     TickCoordinatorService f18847e;
     /* renamed from: f */

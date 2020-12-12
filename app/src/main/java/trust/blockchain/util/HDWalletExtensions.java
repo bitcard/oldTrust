@@ -3,6 +3,7 @@ package trust.blockchain.util;
 import kotlin.jvm.internal.Intrinsics;
 import trust.blockchain.Slip;
 import trust.blockchain.entity.DerivationPath;
+import wallet.core.jni.CoinType;
 import wallet.core.jni.HDWallet;
 import wallet.core.jni.PublicKey;
 
@@ -14,7 +15,7 @@ public final class HDWalletExtensions {
     }
 
     private final PublicKey derive(String str, DerivationPath derivationPath) {
-        PublicKey publicKeyFromExtended = HDWallet.getPublicKeyFromExtended(str, derivationPath.description());
+        PublicKey publicKeyFromExtended = HDWallet.getPublicKeyFromExtended(str, CoinType.BITCOIN, derivationPath.description());
         Intrinsics.checkExpressionValueIsNotNull(publicKeyFromExtended, "HDWallet.getPublicKeyFro…nded, path.description())");
         return publicKeyFromExtended;
     }

@@ -7,7 +7,7 @@ import trust.blockchain.TransactionSigner
 import trust.blockchain.entity.TransactionSign
 import trust.blockchain.entity.TransactionUnsigned
 import wallet.core.jni.HDWallet
-import wallet.core.jni.NimiqSigner
+//import wallet.core.jni.NimiqSigner
 import wallet.core.jni.PrivateKey
 import wallet.core.jni.proto.Nimiq.SigningInput
 
@@ -25,18 +25,18 @@ class NimiqTransactionSigner(private val nimiqService: NimiqService) : Transacti
 //        return sign(privateKey, data)
 //    }
 
-    override fun sign(privateKey: PrivateKey, unsignedTx: TransactionUnsigned): TransactionSign {
-        val display = unsignedTx.toAddress().display()
-        val slip = unsignedTx.account().coin
-        val longValue = unsignedTx.weiAmount().toLong()
-        val currentBlock = this.nimiqService.currentBlock.toInt()
-        val signInput = SigningInput.newBuilder()
-        signInput.value = longValue
-        signInput.destination = display
-        signInput.fee = slip.feeCalculator().defaultFee()
-        signInput.validityStartHeight = currentBlock
-        signInput.privateKey = ByteString.copyFrom(privateKey.data())
-        val signBytes = NimiqSigner.sign(signInput.build()).encoded.toByteArray()
-        return TransactionSign("", signBytes, unsignedTx)
-    }
+//    override fun sign(privateKey: PrivateKey, unsignedTx: TransactionUnsigned): TransactionSign {
+//        val display = unsignedTx.toAddress().display()
+//        val slip = unsignedTx.account().coin
+//        val longValue = unsignedTx.weiAmount().toLong()
+//        val currentBlock = this.nimiqService.currentBlock.toInt()
+//        val signInput = SigningInput.newBuilder()
+//        signInput.value = longValue
+//        signInput.destination = display
+//        signInput.fee = slip.feeCalculator().defaultFee()
+//        signInput.validityStartHeight = currentBlock
+//        signInput.privateKey = ByteString.copyFrom(privateKey.data())
+//        val signBytes = NimiqSigner.sign(signInput.build()).encoded.toByteArray()
+//        return TransactionSign("", signBytes, unsignedTx)
+//    }
 }

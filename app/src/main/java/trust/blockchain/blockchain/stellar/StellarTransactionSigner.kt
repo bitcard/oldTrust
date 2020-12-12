@@ -11,7 +11,7 @@ import trust.blockchain.entity.TransactionUnsigned
 import wallet.core.jni.HDWallet
 import wallet.core.jni.PrivateKey
 import wallet.core.jni.StellarPassphrase
-import wallet.core.jni.StellarSigner
+//import wallet.core.jni.StellarSigner
 import wallet.core.jni.proto.Stellar.MemoText
 import wallet.core.jni.proto.Stellar.SigningInput
 import wallet.core.jni.proto.Stellar.SigningInput.Builder
@@ -51,31 +51,31 @@ class StellarTransactionSigner(private val stellarRpcService: StellarService) : 
 
     }
 
-    private fun getSigningBytes(unsignedTx: TransactionUnsigned, privateKey: PrivateKey, operationType: OperationType): ByteArray {
-        val stellarPassphrase: StellarPassphrase
-        val slip = unsignedTx.account().coin
-        val longValue = unsignedTx.weiAmount().toLong()
-        val stellarService = this.stellarRpcService
-        val parseLong = java.lang.Long.parseLong(stellarService.loadAccountData(unsignedTx.asset()).sequence) + 1
-        if (slip == Slip.STELLAR) {
-            stellarPassphrase = StellarPassphrase.STELLAR
-        } else {
-            stellarPassphrase = StellarPassphrase.KIN
-        }
-        val signInput = SigningInput.newBuilder()
-        signInput.passphrase = stellarPassphrase.toString()
-        signInput.account = unsignedTx.from().address().data()
-        signInput.amount = longValue
-        signInput.destination = unsignedTx.toAddress().data()
-        signInput.fee = getFee(unsignedTx)
-        signInput.sequence = parseLong
-        signInput.privateKey = ByteString.copyFrom(privateKey.data())
-        setMemo(signInput, unsignedTx.memo())
-        signInput.operationType = operationType
-        signInput.operationTypeValue = operationType.number
-
-        return StellarSigner.sign(signInput.build()).signatureBytes.toByteArray()
-    }
+//    private fun getSigningBytes(unsignedTx: TransactionUnsigned, privateKey: PrivateKey, operationType: OperationType): ByteArray {
+//        val stellarPassphrase: StellarPassphrase
+//        val slip = unsignedTx.account().coin
+//        val longValue = unsignedTx.weiAmount().toLong()
+//        val stellarService = this.stellarRpcService
+//        val parseLong = java.lang.Long.parseLong(stellarService.loadAccountData(unsignedTx.asset()).sequence) + 1
+//        if (slip == Slip.STELLAR) {
+//            stellarPassphrase = StellarPassphrase.STELLAR
+//        } else {
+//            stellarPassphrase = StellarPassphrase.KIN
+//        }
+//        val signInput = SigningInput.newBuilder()
+//        signInput.passphrase = stellarPassphrase.toString()
+//        signInput.account = unsignedTx.from().address().data()
+//        signInput.amount = longValue
+//        signInput.destination = unsignedTx.toAddress().data()
+//        signInput.fee = getFee(unsignedTx)
+//        signInput.sequence = parseLong
+//        signInput.privateKey = ByteString.copyFrom(privateKey.data())
+//        setMemo(signInput, unsignedTx.memo())
+//        signInput.operationType = operationType
+//        signInput.operationTypeValue = operationType.number
+//
+//        return StellarSigner.sign(signInput.build()).signatureBytes.toByteArray()
+//    }
 
     private fun setMemo(builder: Builder, str: String) {
         if (TextUtils.isEmpty(str)) {
@@ -93,7 +93,7 @@ class StellarTransactionSigner(private val stellarRpcService: StellarService) : 
 //        return sign(privateKey, data)
 //    }
 
-    override fun sign(privateKey: PrivateKey, unsignedTx: TransactionUnsigned): TransactionSign {
-        return TransactionSign("", getSigningBytes(unsignedTx, privateKey, getOperationType(unsignedTx)), unsignedTx)
-    }
+//    override fun sign(privateKey: PrivateKey, unsignedTx: TransactionUnsigned): TransactionSign {
+//        return TransactionSign("", getSigningBytes(unsignedTx, privateKey, getOperationType(unsignedTx)), unsignedTx)
+//    }
 }

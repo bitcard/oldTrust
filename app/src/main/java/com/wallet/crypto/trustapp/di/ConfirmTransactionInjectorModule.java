@@ -8,9 +8,9 @@ import dagger.android.ContributesAndroidInjector;
 
 @Module
 public interface ConfirmTransactionInjectorModule {
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract ConfirmTransactionFragment bindConfirmTransactionFragment();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract GasSettingsFragment bindGasSettingsFragment();
 }

@@ -20,42 +20,42 @@ import dagger.android.ContributesAndroidInjector;
 @Module
 public interface HomePageFragmentInjectorModule {
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract AssetItemDetailsFragment bindAssetItemDetailsFragment();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract CollectiblesItemsFragment bindCollectiblesItemsFragment();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract AssetsFragment bindAssetsFragment();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract AssetsScreenFragment bindAssetsScreenFragment();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract CollectiblesCategoriesFragment bindCollectiblesCategoriesFragment();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract MainFragment bindMainFragment();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract SearchFragment bindSearchFragment();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract SettingsFragment bindSettingsFragment();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract BrowserFragment bindBrowserFragment();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract DappDashboardFragment bindDappDashboardFragment();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract DexFragment bindDexFragment();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract LotsFragment bindLotsFragment();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract DappCategoryFragment bindDappCategoryFragment();
 }

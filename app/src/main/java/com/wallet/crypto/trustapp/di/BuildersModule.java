@@ -41,61 +41,61 @@ abstract class BuildersModule {
     @ContributesAndroidInjector
     abstract SplashActivity bindSplashActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract AddWalletActivity bindAddWalletActivity();
 
-    @ContributesAndroidInjector(modules = {HomePageFragmentInjectorModule.class, ConfirmTransactionInjectorModule.class})
+//    @ContributesAndroidInjector(modules = {HomePageFragmentInjectorModule.class, ConfirmTransactionInjectorModule.class})
     abstract MainActivity bindMainActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract ExportPhraseActivity bindExportPhraseActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract ImportWalletActivity bindImportWalletActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract SendActivity bindSendActivity();
 
-    @ContributesAndroidInjector (modules = {ConfirmTransactionInjectorModule.class})
+//    @ContributesAndroidInjector (modules = {ConfirmTransactionInjectorModule.class})
     abstract ConfirmationActivity bindConfirmationActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract ReceiveActivity bindReceiveActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract TransactionDetailActivity bindTransactionDetailActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract WalletInfoActivity bindWalletInfoActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract WalletsActivity bindWalletsActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract PasscodeActivity bindPasscodeActivity();
 
-    @ContributesAndroidInjector (modules = {CurrencySelectionModule.class})
+//    @ContributesAndroidInjector (modules = {CurrencySelectionModule.class})
     abstract CurrencySelectionActivity bindCurrencySelectionActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract BrowserSettingsActivity bindBrowserSettingsActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract ChooseSearchEngineActivity bindChooseSearchEngineActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract PushNotificationsSettingsActivity bindPushNotificationsSettingsActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract AssetMarketInfoActivity bindAssetMarketInfoActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract BuyCryptoActivity bindBuyCryptoActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract AddAssetActivity bindAddAssetActivity();
 
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract WalletConnectActivity bindWalletConnectActivity();
 //    @Subcomponent
 //    /* renamed from: com.wallet.crypto.trustapp.di.BuildersModule_BindChooseAssetsActivity$ChooseAssetActivitySubcomponent */

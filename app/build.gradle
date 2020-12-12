@@ -1,10 +1,13 @@
 apply plugin: 'com.android.application'
 apply plugin: 'realm-android'
 apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.1"
+//    buildToolsVersion "29.0.1"
+    buildToolsVersion '30.0.1'
+    ndkVersion "21.1.6352462"
     defaultConfig {
         applicationId "com.wallet.crypto.trustapp"
 //        applicationId "com.wallet.crypto.elaapp"
@@ -38,6 +41,10 @@ project.ext {
     daggerVersion = "2.19"
 }
 
+kapt {
+    generateStubs = true
+}
+
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation 'androidx.appcompat:appcompat:1.0.2'
@@ -50,24 +57,26 @@ dependencies {
     implementation 'androidx.preference:preference:1.0.0'
 
     // firebase
-    implementation 'com.google.firebase:firebase-iid:+'
+//    implementation 'com.google.firebase:firebase-iid:+'
 //    implementation 'com.google.firebase:firebase-core:11.8.0'
 //    implementation 'com.google.firebase:firebase-messaging:11.8.0'
 //    implementation 'com.google.firebase:firebase-auth:11.8.0'
     // Bar code scanning
     implementation "com.google.zxing:core:3.2.1"
     implementation 'com.budiyev.android:code-scanner:2.1.0'
-    implementation "com.google.android.gms:play-services-vision:11.8.0"
-    implementation "com.google.android.gms:play-services-measurement:16.4.0"
+//    implementation "com.google.android.gms:play-services-vision:11.8.0"
+//    implementation "com.google.android.gms:play-services-measurement:16.4.0"
 
 
     // Dagger 2
     // Dagger core
     implementation "com.google.dagger:dagger:$project.daggerVersion"
-    annotationProcessor "com.google.dagger:dagger-compiler:$project.daggerVersion"
+//    annotationProcessor "com.google.dagger:dagger-compiler:$project.daggerVersion"
+    kapt "com.google.dagger:dagger-compiler:$project.daggerVersion"
     // Dagger Android
     implementation "com.google.dagger:dagger-android-support:$project.daggerVersion"
-    annotationProcessor "com.google.dagger:dagger-android-processor:$project.daggerVersion"
+//    annotationProcessor "com.google.dagger:dagger-android-processor:$project.daggerVersion"
+    kapt "com.google.dagger:dagger-android-processor:$project.daggerVersion"
     // if you are not using support library, include this instead
     implementation "com.google.dagger:dagger-android:$project.daggerVersion"
 
@@ -97,7 +106,8 @@ dependencies {
     implementation "com.squareup.okhttp3:okhttp:$project.okhttpVersion"
 
     // protobuf
-    implementation 'com.google.protobuf:protobuf-java:3.7.0'
+//    implementation 'com.google.protobuf:protobuf-java:3.7.0'
+    implementation 'com.google.protobuf:protobuf-java:3.0.0'
 
     // web3j
     implementation 'com.github.TrustWallet:trust-web3-provider:0.2.1'
@@ -125,10 +135,15 @@ dependencies {
     implementation 'com.squareup.okio:okio:2.2.2'
 
     implementation 'com.github.bumptech.glide:glide:4.8.0'
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+//    annotationProcessor 'androidx.annotation:annotation:1.1.0' // 必须添加，防止android.support.annotation找不到
+//    annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+    kapt 'com.github.bumptech.glide:compiler:4.8.0' // 使用kapt而不是annotationProcessor
     implementation 'com.github.bumptech.glide:okhttp3-integration:4.8.0'
 //    implementation "com.android.support:support-annotations:28.0.0-alpha3"
 //    annotationProcessor 'com.android.support:support-annotations:28.0.0-alpha3'
+
+//    implementation 'androidx.vectordrawable:vectordrawable-animated:1.1.0'
+//    implementation 'androidx.exifinterface:exifinterface:1.2.0'
 
     implementation 'com.madgag.spongycastle:core:1.58.0.0'
 
@@ -148,7 +163,7 @@ dependencies {
     implementation "com.google.code.gson:gson:$project.gsonVersion"
     implementation 'com.google.android:flexbox:1.1.0'
     implementation 'me.zhanghai.android.materialprogressbar:library:1.6.1'
-    implementation 'com.google.protobuf:protobuf-java:3.7.0'
+//    implementation 'com.google.protobuf:protobuf-java:3.7.0'
 
     implementation "androidx.appcompat:appcompat:1.0.0"
     implementation "com.google.android.material:material:1.0.0"
@@ -163,8 +178,8 @@ dependencies {
 
     implementation 'de.hdodenhof:circleimageview:3.0.0'
 
-    implementation 'com.trustwallet.walletcore:walletcore:0.12.8'
-
+//    implementation 'com.trustwallet.walletcore:walletcore:0.12.8'
+    implementation 'com.trustwallet:wallet-core:2.4.0'
 
     implementation "com.github.komputing:KHex:0.6"
 

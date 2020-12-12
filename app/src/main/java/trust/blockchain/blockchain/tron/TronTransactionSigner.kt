@@ -13,7 +13,7 @@ import trust.blockchain.entity.TransactionUnsigned
 import trust.blockchain.util.ExtensionsKt
 import wallet.core.jni.HDWallet
 import wallet.core.jni.PrivateKey
-import wallet.core.jni.TronSigner
+//import wallet.core.jni.TronSigner
 import wallet.core.jni.proto.Tron.BlockHeader
 import wallet.core.jni.proto.Tron.SigningInput
 import wallet.core.jni.proto.Tron.SigningOutput
@@ -121,30 +121,30 @@ class TronTransactionSigner(private val tronRpcService: TronService) : Transacti
 //        return sign(privateKey, data)
 //    }
 
-    override fun sign(privateKey: PrivateKey, unsignedTx: TransactionUnsigned): TransactionSign {
-        val blockInfo = this.tronRpcService.blockInfo
-        Intrinsics.checkExpressionValueIsNotNull(blockInfo, "blockInfo")
-        val blockHeader = getBlockHeader(blockInfo)
-        val newBuilder = Transaction.newBuilder()
-        Intrinsics.checkExpressionValueIsNotNull(newBuilder, "this")
-        newBuilder.blockHeader = blockHeader
-        setTransferType(newBuilder, unsignedTx)
-        newBuilder.expiration = this.tronRpcService.getExpirationTime(blockInfo.timestamp)
-        newBuilder.timestamp = this.tronRpcService.getTransactionTimestamp(blockInfo.timestamp)
-        newBuilder.contractOneofCase
-        val build = newBuilder.build()
-        val newBuilder2 = SigningInput.newBuilder()
-        Intrinsics.checkExpressionValueIsNotNull(newBuilder2, "this")
-        newBuilder2.transaction = build
-        newBuilder2.privateKey = ByteString.copyFrom(privateKey.data())
-        val sign = TronSigner.sign(newBuilder2.build())
-        Intrinsics.checkExpressionValueIsNotNull(sign, "signingOutput")
-        val toByteArray = sign.signature.toByteArray()
-        val toByteArray2 = sign.id.toByteArray()
-        Intrinsics.checkExpressionValueIsNotNull(toByteArray2, "signingOutput.id.toByteArray()")
-        val toHex = ExtensionsKt.toHex(toByteArray2)
-        Intrinsics.checkExpressionValueIsNotNull(toByteArray, "signBytes")
-        Intrinsics.checkExpressionValueIsNotNull(build, "transaction")
-        return TransactionSign(toHex, toByteArray, unsignedTx, encodeJsonBytes(unsignedTx, sign, toByteArray, build.expiration, build.timestamp))
-    }
+//    override fun sign(privateKey: PrivateKey, unsignedTx: TransactionUnsigned): TransactionSign {
+//        val blockInfo = this.tronRpcService.blockInfo
+//        Intrinsics.checkExpressionValueIsNotNull(blockInfo, "blockInfo")
+//        val blockHeader = getBlockHeader(blockInfo)
+//        val newBuilder = Transaction.newBuilder()
+//        Intrinsics.checkExpressionValueIsNotNull(newBuilder, "this")
+//        newBuilder.blockHeader = blockHeader
+//        setTransferType(newBuilder, unsignedTx)
+//        newBuilder.expiration = this.tronRpcService.getExpirationTime(blockInfo.timestamp)
+//        newBuilder.timestamp = this.tronRpcService.getTransactionTimestamp(blockInfo.timestamp)
+//        newBuilder.contractOneofCase
+//        val build = newBuilder.build()
+//        val newBuilder2 = SigningInput.newBuilder()
+//        Intrinsics.checkExpressionValueIsNotNull(newBuilder2, "this")
+//        newBuilder2.transaction = build
+//        newBuilder2.privateKey = ByteString.copyFrom(privateKey.data())
+//        val sign = TronSigner.sign(newBuilder2.build())
+//        Intrinsics.checkExpressionValueIsNotNull(sign, "signingOutput")
+//        val toByteArray = sign.signature.toByteArray()
+//        val toByteArray2 = sign.id.toByteArray()
+//        Intrinsics.checkExpressionValueIsNotNull(toByteArray2, "signingOutput.id.toByteArray()")
+//        val toHex = ExtensionsKt.toHex(toByteArray2)
+//        Intrinsics.checkExpressionValueIsNotNull(toByteArray, "signBytes")
+//        Intrinsics.checkExpressionValueIsNotNull(build, "transaction")
+//        return TransactionSign(toHex, toByteArray, unsignedTx, encodeJsonBytes(unsignedTx, sign, toByteArray, build.expiration, build.timestamp))
+//    }
 }

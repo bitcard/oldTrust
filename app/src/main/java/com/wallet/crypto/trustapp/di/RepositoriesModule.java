@@ -77,7 +77,7 @@ import com.wallet.crypto.trustapp.service.rpc.ethereum.Web3jEthereumClient;
 import com.wallet.crypto.trustapp.service.rpc.icon.IconRpcService;
 import com.wallet.crypto.trustapp.service.rpc.iotex.IotexRpcClient;
 import com.wallet.crypto.trustapp.service.rpc.iotex.IotexRpcService;
-import com.wallet.crypto.trustapp.service.rpc.iotex.IotexTransactionSigner;
+//import com.wallet.crypto.trustapp.service.rpc.iotex.IotexTransactionSigner;
 import com.wallet.crypto.trustapp.service.rpc.kin.KinRpcService;
 import com.wallet.crypto.trustapp.service.rpc.nimiq.NimiqRpcClient;
 import com.wallet.crypto.trustapp.service.rpc.nimiq.NimiqRpcService;
@@ -96,10 +96,10 @@ import com.wallet.crypto.trustapp.service.rpc.tron.TronRpcService;
 import com.wallet.crypto.trustapp.service.rpc.tron.entity.BlockDeserializer;
 import com.wallet.crypto.trustapp.service.rpc.waves.WavesRpcClient;
 import com.wallet.crypto.trustapp.service.rpc.waves.WavesRpcService;
-import com.wallet.crypto.trustapp.service.rpc.waves.WavesTransactionSigner;
+//import com.wallet.crypto.trustapp.service.rpc.waves.WavesTransactionSigner;
 import com.wallet.crypto.trustapp.service.rpc.zilliqa.ZilliqaRpcClient;
 import com.wallet.crypto.trustapp.service.rpc.zilliqa.ZilliqaRpcService;
-import com.wallet.crypto.trustapp.service.rpc.zilliqa.ZilliqaTransactionSigner;
+//import com.wallet.crypto.trustapp.service.rpc.zilliqa.ZilliqaTransactionSigner;
 import com.wallet.crypto.trustapp.service.tick.HandlerTickCoordinatorService;
 import com.wallet.crypto.trustapp.service.tick.TickCoordinatorService;
 import com.wallet.crypto.trustapp.service.trustapi.ApiClient;
@@ -331,7 +331,7 @@ public class RepositoriesModule {
     }
 
     @Singleton
-    @Provides
+//    @Provides
     EthereumRpcService provideEthRpcService(EthereumClient ethereumClient, EthTransactionsNonceInteract ethTransactionsNonceInteract) {
         return new EthereumRpcService(ethereumClient, ethTransactionsNonceInteract);
     }
@@ -359,11 +359,11 @@ public class RepositoriesModule {
         return (IotexRpcClient) builder.build().create(IotexRpcClient.class);
     }
 
-    @Singleton
-    @Provides
-    IotexTransactionSigner provideIotexTransactionSigner(IotexRpcService iotexRpcService) {
-        return new IotexTransactionSigner(iotexRpcService);
-    }
+//    @Singleton
+//    @Provides
+//    IotexTransactionSigner provideIotexTransactionSigner(IotexRpcService iotexRpcService) {
+//        return new IotexTransactionSigner(iotexRpcService);
+//    }
 
     @StellarClientType(StellarClientEnum.KIN)
     @Singleton
@@ -447,7 +447,7 @@ public class RepositoriesModule {
     }
 
     @Singleton
-    @Provides
+//    @Provides
     SessionRepository provideSessionRepository(PreferenceRepositoryType preferenceRepositoryType, WalletsRepository walletsRepository) {
         return new PreferenceSessionRepository(preferenceRepositoryType, walletsRepository);
     }
@@ -511,7 +511,7 @@ public class RepositoriesModule {
     }
 
     @Singleton
-    @Provides
+//    @Provides
     TransactionsRepository provideTransactionRepository(SessionRepository sessionRepository, ApiService apiService, TransactionsServiceAdapter transactionsServiceAdapter, TransactionLocalSource transactionLocalSource) {
         return new TransactionsRepositoryType(sessionRepository, transactionLocalSource, transactionsServiceAdapter, apiService);
     }
@@ -528,39 +528,39 @@ public class RepositoriesModule {
         return new TronTransactionSigner(tronRpcService);
     }
 
-    @Singleton
-    @Provides
-    WalletsRepository provideWalletRepository(
-            PasswordStore passwordStore,
-            WalletStore walletStore,
-            BitcoinTransactionSigner bitcoinTransactionSigner,
-            ZcashTransactionSigner zcashTransactionSigner,
-            BinanceTransactionSigner binanceTransactionSigner,
-            RippleTransactionSigner rippleTransactionSigner,
-            StellarTransactionSigner stellarTransactionSigner,
-            AionTransactionSigner aionTransactionSigner,
-            NimiqTransactionSigner nimiqTransactionSigner,
-            TronTransactionSigner tronTransactionSigner,
-            TezosTransactionSigner tezosTransactionSigner,
-            ThetaTransactionSigner thetaTransactionSigner,
-            CosmosTransactionSigner cosmosTransactionSigner,
-            OntologyTransactionSigner ontologyTransactionSigner,
-            GroestlTransactionSigner groestlTransactionSigner,
-            ZilliqaTransactionSigner zilliqaTransactionSigner,
-            IotexTransactionSigner iotexTransactionSigner,
-            WavesTransactionSigner wavesTransactionSigner) {
-        Signer[] signerArr = new Signer[]{new EthereumSigner(), new ThorSigner(), new IconSigner()};
-        TransactionSigner[] transactionSignerArr = new TransactionSigner[]{bitcoinTransactionSigner, zcashTransactionSigner, binanceTransactionSigner, rippleTransactionSigner, stellarTransactionSigner, aionTransactionSigner, nimiqTransactionSigner, tronTransactionSigner, tezosTransactionSigner, thetaTransactionSigner, cosmosTransactionSigner, ontologyTransactionSigner, groestlTransactionSigner, zilliqaTransactionSigner, iotexTransactionSigner, wavesTransactionSigner};
-        AccountFactory[] accountFactoryArr = new AccountFactory[]{new WalletCoreAccountFactory()};
-        WatchAdapter watchAdapter = new WatchAdapter();
-        KeyStoreAdapter keyStoreAdapter = new KeyStoreAdapter(accountFactoryArr, signerArr, transactionSignerArr);
-        Signer[] signerArr2 = signerArr;
-        TransactionSigner[] transactionSignerArr2 = transactionSignerArr;
-        AccountFactory[] accountFactoryArr2 = accountFactoryArr;
-        MnemonicAdapter mnemonicAdapter = new MnemonicAdapter(2, new SecureRandomEntropy(), new TrustWalletCryptographer(), C2189a.f19095a, signerArr2, transactionSignerArr2, accountFactoryArr2);
-        MnemonicAdapter mnemonicAdapter2 = new MnemonicAdapter(3, new SecureRandomEntropy(), new TrustWalletCryptographer(), C2190b.f19096a, signerArr2, transactionSignerArr2, accountFactoryArr2);
-        return new WalletsRepositoryType(walletStore, passwordStore, 3, watchAdapter, keyStoreAdapter, mnemonicAdapter, mnemonicAdapter2);
-    }
+//    @Singleton
+//    @Provides
+//    WalletsRepository provideWalletRepository(
+//            PasswordStore passwordStore,
+//            WalletStore walletStore,
+//            BitcoinTransactionSigner bitcoinTransactionSigner,
+//            ZcashTransactionSigner zcashTransactionSigner,
+//            BinanceTransactionSigner binanceTransactionSigner,
+//            RippleTransactionSigner rippleTransactionSigner,
+//            StellarTransactionSigner stellarTransactionSigner,
+//            AionTransactionSigner aionTransactionSigner,
+//            NimiqTransactionSigner nimiqTransactionSigner,
+//            TronTransactionSigner tronTransactionSigner,
+//            TezosTransactionSigner tezosTransactionSigner,
+//            ThetaTransactionSigner thetaTransactionSigner,
+//            CosmosTransactionSigner cosmosTransactionSigner,
+//            OntologyTransactionSigner ontologyTransactionSigner,
+//            GroestlTransactionSigner groestlTransactionSigner,
+//            ZilliqaTransactionSigner zilliqaTransactionSigner,
+//            IotexTransactionSigner iotexTransactionSigner,
+//            WavesTransactionSigner wavesTransactionSigner) {
+//        Signer[] signerArr = new Signer[]{new EthereumSigner(), new ThorSigner(), new IconSigner()};
+//        TransactionSigner[] transactionSignerArr = new TransactionSigner[]{bitcoinTransactionSigner, zcashTransactionSigner, binanceTransactionSigner, rippleTransactionSigner, stellarTransactionSigner, aionTransactionSigner, nimiqTransactionSigner, tronTransactionSigner, tezosTransactionSigner, thetaTransactionSigner, cosmosTransactionSigner, ontologyTransactionSigner, groestlTransactionSigner, zilliqaTransactionSigner, iotexTransactionSigner, wavesTransactionSigner};
+//        AccountFactory[] accountFactoryArr = new AccountFactory[]{new WalletCoreAccountFactory()};
+//        WatchAdapter watchAdapter = new WatchAdapter();
+//        KeyStoreAdapter keyStoreAdapter = new KeyStoreAdapter(accountFactoryArr, signerArr, transactionSignerArr);
+//        Signer[] signerArr2 = signerArr;
+//        TransactionSigner[] transactionSignerArr2 = transactionSignerArr;
+//        AccountFactory[] accountFactoryArr2 = accountFactoryArr;
+//        MnemonicAdapter mnemonicAdapter = new MnemonicAdapter(2, new SecureRandomEntropy(), new TrustWalletCryptographer(), C2189a.f19095a, signerArr2, transactionSignerArr2, accountFactoryArr2);
+//        MnemonicAdapter mnemonicAdapter2 = new MnemonicAdapter(3, new SecureRandomEntropy(), new TrustWalletCryptographer(), C2190b.f19096a, signerArr2, transactionSignerArr2, accountFactoryArr2);
+//        return new WalletsRepositoryType(walletStore, passwordStore, 3, watchAdapter, keyStoreAdapter, mnemonicAdapter, mnemonicAdapter2);
+//    }
 
     @Singleton
     @Provides
@@ -591,11 +591,11 @@ public class RepositoriesModule {
         return new WavesRpcService(wavesRpcClient);
     }
 
-    @Singleton
-    @Provides
-    WavesTransactionSigner provideWavesTransactionSigner() {
-        return new WavesTransactionSigner();
-    }
+//    @Singleton
+//    @Provides
+//    WavesTransactionSigner provideWavesTransactionSigner() {
+//        return new WavesTransactionSigner();
+//    }
 
     @Singleton
     @Provides
@@ -620,14 +620,14 @@ public class RepositoriesModule {
         return new ZilliqaRpcService(zilliqaRpcClient, ethTransactionsNonceInteract);
     }
 
-    @Singleton
-    @Provides
-    ZilliqaTransactionSigner provideZilliqaTransactionSigner() {
-        return new ZilliqaTransactionSigner();
-    }
+//    @Singleton
+//    @Provides
+//    ZilliqaTransactionSigner provideZilliqaTransactionSigner() {
+//        return new ZilliqaTransactionSigner();
+//    }
 
     @Singleton
-    @Provides
+//    @Provides
     BlockchainRepository providesNodeRepository(SessionRepository sessionRepository,
                                                 TransactionsRepository transactionsRepository,
                                                 TransactionsServiceAdapter transactionsServiceAdapter,

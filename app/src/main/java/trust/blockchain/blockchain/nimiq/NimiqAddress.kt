@@ -13,9 +13,9 @@ class NimiqAddress : PlainAddress {
     constructor(address: String) : super(address) {
     }
 
-    fun hexValue(): String {
-        return ExtensionsKt.toHex(wallet.core.jni.NimiqAddress(data()).keyHash())
-    }
+//    fun hexValue(): String {
+//        return ExtensionsKt.toHex(wallet.core.jni.NimiqAddress(data()).keyHash())
+//    }
 
     constructor(parcel: Parcel) : super(parcel){
     }

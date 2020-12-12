@@ -7,6 +7,6 @@ import dagger.android.ContributesAndroidInjector;
 
 @Module
 public interface CurrencySelectionModule {
-    @ContributesAndroidInjector
+//    @ContributesAndroidInjector
     abstract CurrencySelectionFragment bindCurrencySelectionFragment();
 }

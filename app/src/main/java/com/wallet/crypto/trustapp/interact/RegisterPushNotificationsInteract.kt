@@ -1,6 +1,6 @@
 package com.wallet.crypto.trustapp.interact
 
-import com.google.firebase.iid.FirebaseInstanceId
+//import com.google.firebase.iid.FirebaseInstanceId
 import com.wallet.crypto.trustapp.repository.PreferenceRepositoryType
 import com.wallet.crypto.trustapp.repository.wallet.WalletsRepository
 import com.wallet.crypto.trustapp.service.ApiService
@@ -34,13 +34,13 @@ constructor(/* renamed from: a */
         complete = this.walletsRepository.fetch()
                 .flatMapCompletable { wallets ->
                     Intrinsics.checkParameterIsNotNull(wallets, "wallets")
-                    val instance = FirebaseInstanceId.getInstance()
-                    Intrinsics.checkExpressionValueIsNotNull(instance, "FirebaseInstanceId.getInstance()")
-                    instance.instanceId.addOnSuccessListener { instanceId ->
-                        GlobalScope.launch {
-                            apiClientService.registerForPushNotifications(SystemUtils.getDeviceId(), wallets, instanceId.token)
-                        }
-                    }
+//                    val instance = FirebaseInstanceId.getInstance()
+//                    Intrinsics.checkExpressionValueIsNotNull(instance, "FirebaseInstanceId.getInstance()")
+//                    instance.instanceId.addOnSuccessListener { instanceId ->
+//                        GlobalScope.launch {
+//                            apiClientService.registerForPushNotifications(SystemUtils.getDeviceId(), wallets, instanceId.token)
+//                        }
+//                    }
                     Completable.complete()
                 }
                 .subscribeOn(Schedulers.io())

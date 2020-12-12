@@ -53,10 +53,10 @@ constructor(private val rpcClient: ZilliqaRpcClient, private val transactionsNon
         GET_TRANSACTION("GetTransaction")
     }
 
-    private fun getAccountData(account: Account): ZilliqaBalanceResult {
-        val zilliqaAddress = account.address() as ZilliqaAddress
-        return this.rpcClient.getBalance(JSONRequestData(method = Methods.GET_BALANCE.value, params = arrayOf(ExtensionsKt.drop0x(zilliqaAddress.hexValue())))).execute().body()?.result ?: throw Exception("Could not load account data")
-    }
+//    private fun getAccountData(account: Account): ZilliqaBalanceResult {
+//        val zilliqaAddress = account.address() as ZilliqaAddress
+//        return this.rpcClient.getBalance(JSONRequestData(method = Methods.GET_BALANCE.value, params = arrayOf(ExtensionsKt.drop0x(zilliqaAddress.hexValue())))).execute().body()?.result ?: throw Exception("Could not load account data")
+//    }
 
     override fun encodeTransaction(transactionUnsigned: TransactionUnsigned, signature: ByteArray?): Single<ByteArray> {
         return Single.just(ByteArray(0))
@@ -72,12 +72,14 @@ constructor(private val rpcClient: ZilliqaRpcClient, private val transactionsNon
 
     override fun estimateNonce(account: Account): Single<Long> {
         return Single.fromCallable {
-            var nonce =
-            try {
-                getAccountData(account).getNonce() + 1
-            } catch (unused: Exception) {
-                0L
-            }
+//            var nonce =
+//            try {
+//                getAccountData(account).getNonce() + 1
+//            } catch (unused: Exception) {
+//                0L
+//            }
+
+            var nonce = 0L;
 
             val longValue = (transactionsNonceInteract.estimate(account).blockingGet() as Number).toLong()
             if (nonce > longValue) nonce else longValue
@@ -107,14 +109,14 @@ constructor(private val rpcClient: ZilliqaRpcClient, private val transactionsNon
         val copyOf = Arrays.copyOf(assets, assets.size)
         val length = copyOf.size
         for (i in 0 until length) {
-            val asset = copyOf[i]
-            if (asset.type == 1 && asset.coin() === coin) {
-                copyOf[i] = Asset(asset, try {
-                    Value(BigInteger(getAccountData(asset.account).balance))
-                } catch (unused: Exception) {
-                    asset.balance ?: Value(BigInteger.ZERO)
-                })
-            }
+//            val asset = copyOf[i]
+//            if (asset.type == 1 && asset.coin() === coin) {
+//                copyOf[i] = Asset(asset, try {
+//                    Value(BigInteger(getAccountData(asset.account).balance))
+//                } catch (unused: Exception) {
+//                    asset.balance ?: Value(BigInteger.ZERO)
+//                })
+//            }
         }
         return copyOf
     }
